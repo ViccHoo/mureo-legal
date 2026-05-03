@@ -1,0 +1,266 @@
+:root {
+  --bg: #111527;
+  --bg-accent: #1a2138;
+  --panel: rgba(255, 255, 255, 0.06);
+  --panel-border: rgba(255, 255, 255, 0.1);
+  --text: #f6f1ee;
+  --muted: rgba(246, 241, 238, 0.72);
+  --soft: rgba(246, 241, 238, 0.52);
+  --accent: #d7b98e;
+  --accent-strong: #f0cf9d;
+  --shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+  --max: 1080px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(215, 185, 142, 0.14), transparent 26%),
+    linear-gradient(180deg, #151a2f 0%, var(--bg) 50%, #0d1120 100%);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+}
+
+.shell {
+  width: min(calc(100% - 32px), var(--max));
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 32px 0 18px;
+}
+
+.hero-card,
+.panel,
+.article {
+  border: 1px solid var(--panel-border);
+  background: var(--panel);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
+}
+
+.hero-card {
+  border-radius: 32px;
+  padding: 28px 24px;
+}
+
+.kicker {
+  margin: 0;
+  color: var(--accent);
+  font-size: 12px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 14px 0 0;
+  font-size: clamp(34px, 7vw, 64px);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.lead {
+  margin: 16px 0 0;
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.meta {
+  margin-top: 22px;
+  padding: 18px 18px 16px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.meta h2,
+.article h2,
+.article h3,
+.panel h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.meta p,
+.panel p,
+.article p {
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.nav a,
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.nav a:hover,
+.button-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(215, 185, 142, 0.55);
+  color: var(--accent-strong);
+}
+
+.nav a.is-active {
+  border-color: rgba(215, 185, 142, 0.66);
+  color: var(--accent-strong);
+}
+
+.content {
+  padding: 8px 0 48px;
+}
+
+.content-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.panel,
+.article {
+  border-radius: 28px;
+  padding: 22px 20px;
+}
+
+.cards {
+  display: grid;
+  gap: 16px;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.card-link h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.card-link p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.card-foot {
+  margin-top: 14px;
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.article + .article {
+  margin-top: 16px;
+}
+
+.article h2 {
+  font-size: 30px;
+  letter-spacing: -0.04em;
+}
+
+.article h3 {
+  margin-top: 18px;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+}
+
+.article p {
+  margin: 12px 0 0;
+}
+
+.article ul {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.article li {
+  position: relative;
+  margin-top: 10px;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.article li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.footnote {
+  margin-top: 18px;
+  color: var(--soft);
+  font-size: 13px;
+}
+
+.simple-list {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.simple-list li + li {
+  margin-top: 8px;
+}
+
+.footer {
+  padding: 0 0 44px;
+}
+
+.footer p {
+  margin: 0;
+  color: var(--soft);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: end;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
